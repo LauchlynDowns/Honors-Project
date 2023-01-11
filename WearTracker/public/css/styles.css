@@ -1,0 +1,125 @@
+/* fonts */
+/* quicksand font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+.black{
+    color: black;
+}
+.bold{
+    font-weight: 700;
+}
+.center{
+    text-align: center;
+}
+.formcontainer {
+    background-color: #1F4BE9;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.forminput {
+    background-color: #F4F3FF;
+    border: 0;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-bottom: 5px solid #1F4BE9;
+    min-height: 2vh;
+    padding: 1vh;
+}
+.forminput:autofill{
+    background-color:#F4F3FF;
+    border: 0;
+    
+}
+.forminput:focus{
+    background-color: #F4F3FF;
+    border: 0;
+    border-bottom: 5px solid #1F4BE9;
+    border-right:10px solid #1F4BE9
+}
+
+.form {
+    background-color: #F4F3FF;
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 800px;
+    margin: 20px auto;
+    max-width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+.title {
+    font-family: 'quicksand', 'sans-serif';
+    color: #FFFFFF;
+    font-size: 300%;
+    position: absolute;
+    margin: 0;
+    top: 15%;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+}
+
+.formsection {
+    margin-top: 5vh;
+    padding: 1vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: #1F4BE9;
+    font-family: 'quicksand', 'sans-serif';
+    font-size: 120%;
+}
+.formsection:last-of-type{
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+.formsection:nth-last-child(2){
+    margin-top: 1vh;
+}
+.formsection:first-of-type{
+    margin-top: 1vh;
+    font-size: 130%;
+    color:darkgray;
+}
+.registerforgot {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.signinbutton{
+    background-color: #1F4BE9;
+    border: 0;
+    color: white;
+    padding: 1.5vh;
+    border-radius: 20px;
+    font-size: 120%;
+    min-width: 30%;
+}
+.signinbutton-container{
+    display: flex;
+    justify-content: center;
+}
