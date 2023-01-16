@@ -65,7 +65,7 @@ p{
     margin: 20px auto;
     max-width: calc(100% - 20px);
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 5%;
     display: flex;
     flex-direction: column;
     min-height: 50vh;
@@ -119,7 +119,22 @@ p{
     font-size: 120%;
     min-width: 30%;
 }
+.signinbutton-small{
+    background-color: #1F4BE9;
+    border: 0;
+    color: white;
+    padding: .7vh;
+    border-radius: 20px;
+    font-size: 70%;
+    min-width: 30%;
+    margin-top: 2vh;
+}
 .signinbutton-container{
     display: flex;
     justify-content: center;
+}
+.errors{
+    color: black;
+    font-family:'quicksand', 'sans-serif';
+    margin: 10vh;
 }

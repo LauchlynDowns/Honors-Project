@@ -6,11 +6,11 @@
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        
 <div class="middle">
-<div class="title">WearTracker🚴</div>
+<div class="title">WearTracker</div>
     <div class="form">
-    
+    <x-auth-validation-errors class="errors" :errors="$errors" />
         <form method="POST" action="{{ route('login') }}">
         
             @csrf
@@ -35,7 +35,7 @@
             <br>
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span>{{ __('Remember me') }}</span>
                 </label>
                 </div>
             <div class="formsection">
@@ -51,7 +51,7 @@
                         {{ __('Forgot password?') }}
                     </a>
                 @endif
-                <a class="black bold" href="{{ route('password.request') }}">
+                <a class="black bold" href="{{ route('register') }}">
                 {{ __('Register') }}
 </a>
             </div></div>
