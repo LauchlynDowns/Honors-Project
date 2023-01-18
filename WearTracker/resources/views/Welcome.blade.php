@@ -9,10 +9,24 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="../resources/css/app.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     
     </head>
-    <body>
-       wwww
+    
+    <body class="mainpagebody">
+        <div class="whitetriangle"></div>
+        <div class="bluetriangle"></div>
+        <div class="imagetriangle"></div>
+        <div class="greentriangle"></div>
+   <div class="welcome-container">
+    <div class="welcome-section">WearTracker</div>
+    <div class="welcome-section">The Ultimate bike <br>managment<br> platform</div>
+    <div class="welcome-section"> <div class="signinbutton-container">
+            <x-button class="signinbutton-small whitebutton">
+                    {{ __('Sign In') }}
+                </x-button> <x-button class="signinbutton-small whitebutton">
+                    {{ __('Register') }}
+                </x-button></div></div>
+   </div>
     </body>
 </html>
