@@ -1,5 +1,8 @@
 <x-app-layout>
 <body class="mainpagebody">
+    <div class="garage">
+        
+    </div>
        <div class="bottom-area-container">
         <div class="nav-item">
             <div class="nav-icon">🚲</div>
