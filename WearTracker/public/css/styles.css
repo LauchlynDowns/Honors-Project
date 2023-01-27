@@ -235,12 +235,14 @@ p{
 }
 .imagetriangle{
     clip-path: polygon(0 100%, 100% 100%, 100% 14%, 0 81%);
-    background-color: yellow;
     display: block;
     width:100vw;
     height:100vh;
     z-index: 2;
     position: absolute;
+    background-image: url("./bikebackground.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .greentriangle{
     clip-path: polygon(100% 72%, 64% 100%, 100% 100%);
