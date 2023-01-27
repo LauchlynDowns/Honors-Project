@@ -22,11 +22,12 @@
     <div class="welcome-section">WearTracker</div>
     <div class="welcome-section">The Ultimate bike <br>managment<br> platform</div>
     <div class="welcome-section"> <div class="signinbutton-container">
-            <x-button class="signinbutton-small whitebutton">
-                    {{ __('Sign In') }}
-                </x-button> <x-button class="signinbutton-small whitebutton">
+            <a  class="signinbutton-small whitebutton bluebutton" href="/login">
+                    {{ __('Sign In') }}</a> 
+
+<a href="/register" class="signinbutton-small whitebutton bluebutton-reversed">
                     {{ __('Register') }}
-                </x-button></div></div>
+</a></div></div>
    </div>
     </body>
 </html>

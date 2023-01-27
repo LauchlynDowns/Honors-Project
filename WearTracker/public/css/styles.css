@@ -119,6 +119,12 @@ p{
     font-size: 120%;
     min-width: 30%;
 }
+.signinbutton:hover{
+    background-color: white;
+    box-shadow:inset 0px 0px 0px 3px #1F4BE9;
+    color: #1F4BE9;
+    cursor: pointer;
+}
 .signinbutton-small{
     background-color: #1F4BE9;
     border: 0;
@@ -132,6 +138,7 @@ p{
 .signinbutton-container{
     display: flex;
     justify-content: center;
+   
 }
 .errors{
     color: black;
@@ -177,7 +184,7 @@ p{
 .welcome-container{
     display:flex;
     flex-direction: column;
-    z-index: 2;
+  
 }
 .welcome-section:first-of-type{
     height: 15vh;
@@ -186,7 +193,7 @@ p{
     font-family: 'Quicksand',sans-serif;
     font-weight: 700;
     color: white;
-    z-index: 2;
+
 
 }
 .welcome-section{
@@ -195,12 +202,12 @@ p{
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     color: white;
-    z-index: 2;
+    z-index: 4;
 }
  .welcome-section:last-of-type{
     height: 15vh;
     padding: 0;
-    z-index: 2;
+    z-index: 4;
     
 } 
 .whitebutton{
@@ -213,7 +220,7 @@ p{
     margin-right: 5%;
     margin-left: 5%;
     min-width: 0;
-    z-index: 1;
+    z-index: 4;
 }
 
 .whitetriangle{
@@ -223,6 +230,7 @@ p{
     width:100vw;
     height:100vh;
     position: absolute;
+    z-index: 3;
 }
 .bluetriangle {
     clip-path: polygon(0 0, 100% 0, 100% 14%, 0 81%);
@@ -230,7 +238,7 @@ p{
     display: block;
     width:100vw;
     height:100vh;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
 }
 .imagetriangle{
@@ -250,6 +258,30 @@ p{
     display: block;
     width:100vw;
     height:100vh;
-    z-index: 2;
+    z-index: 4;
     position: absolute;
+}
+
+.bluebutton{
+    background-color: #1F4BE9;
+    text-decoration: none;
+    color: white;
+    font-family: 'quicksand', sans-serif;
+}
+
+.bluebutton-reversed{
+    background-color: white;
+    box-shadow:inset 0px 0px 0px 3px #1F4BE9;
+    color: #1F4BE9;
+    text-decoration: none;
+}
+
+.bluebutton:hover{
+    background-color: white;
+    color: #1F4BE9;
+    box-shadow:inset 0px 0px 0px 3px #1F4BE9;
+}
+.bluebutton-reversed:hover{
+    color: white;
+    background-color: #1F4BE9;
 }
