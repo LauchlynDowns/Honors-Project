@@ -7,17 +7,19 @@
             </div>
             <div class="mileageinfo"><div class="mileageinfo-miles">3000mi</div><div class="mileageinfo-miles">Owned since march 2021</div></div>
        <div class="component-holder">
-        <div class="component">w</div>
+        <div class="component">
+            <div class="component-title-holder"><div class="component-type">FRONT CHAINRING</div><div class="component-model">Uniteco oval ring</div></div>
+        </div>
             <div class="component">w</div>
              <div class="component">w</div>
           
              
         </div>
         <div class="parent-bottom-buttons">
-       <div class="parent-bottom-buttons-button">
+       <div class="parent-bottom-buttons-button bluebutton">
         Button
        </div>
-       <div class="parent-bottom-buttons-button">
+       <div class="parent-bottom-buttons-button bluebutton">
         Button
        </div>
         </div>
