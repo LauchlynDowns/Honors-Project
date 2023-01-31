@@ -405,3 +405,8 @@ p {
     padding: 1%;
     font-family: 'Quicksand', sans-serif;
 }
+.greybackground{
+    background-color: #7E7E7E;
+    background-image: none;
+    cursor: pointer;
+}

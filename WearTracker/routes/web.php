@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\componentController;
+use App\Models\Parents;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +19,18 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard',[
+        'parents' => Parents::all()->where('User_id', Auth::user()->id)
+    ]);
+    
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/welcome', function () {
     return view('Welcome');
 })->middleware(['auth'])->name('welcome');
+
+Route::post('addnewparent', [componentController::class, 'addnewparent'])
+->middleware(['auth'])->name('addnewparent');
+
 
 require __DIR__.'/auth.php';
