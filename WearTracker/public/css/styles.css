@@ -191,7 +191,7 @@ p {
 }
 
 .mainpagebody {
-    background-color: white;
+    background-color: #1F4BE9;
 
 }
 
@@ -316,14 +316,39 @@ p {
 .garage {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     padding-top: 2%;
+    overflow-x: scroll;
+    column-gap: 5%;
+    padding-bottom: 2%;
+   background-color: #1F4BE9;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #36393f #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #36393f;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
 
 .parent {
     background-color: #F4F3FF;
     height: 70vh;
     width: 600px;
+    min-width: 600px;
     border-radius: 17px;
 
 }
@@ -409,4 +434,15 @@ p {
     background-color: #7E7E7E;
     background-image: none;
     cursor: pointer;
+}
+.bikebutton{
+    height:50%;
+    text-align: center;
+}
+.bike-add-form-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
 }

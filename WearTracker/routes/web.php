@@ -32,5 +32,8 @@ Route::get('/welcome', function () {
 Route::post('addnewparent', [componentController::class, 'addnewparent'])
 ->middleware(['auth'])->name('addnewparent');
 
+Route::post('deletebike', [componentController::class, 'deletebike'])
+->middleware(['auth'])->name('deletebike');
+
 
 require __DIR__.'/auth.php';
