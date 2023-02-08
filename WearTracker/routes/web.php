@@ -36,4 +36,10 @@ Route::post('deletebike', [componentController::class, 'deletebike'])
 ->middleware(['auth'])->name('deletebike');
 
 
+//routes for file handling
+Route::resource('photos', FileDownloadController::class);
+
+
+
 require __DIR__.'/auth.php';
+

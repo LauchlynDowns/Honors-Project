@@ -4,11 +4,11 @@
         <div class="garage">
             @foreach ($parents as $parent)
                 <div class="parent">
-                    <div class="garage-item-top-image">
+        <div class="garage-item-top-image" style="background-image: url('{{asset('storage/' . $parent->image_path)}}');">
                         <div class="garage-item-text">{{ $parent->Parent_brand }} {{ $parent->Parent_model }}</div>
                     </div>
                     <div class="mileageinfo">
-                        <div class="mileageinfo-miles">3000mi</div>
+                        <div class="mileageinfo-miles">{{$parent->mileage}} miles</div>
                         <div class="mileageinfo-miles">tracked since {{ $parent->created_at }}</div>
                     </div>
                     <div class="component-holder">
@@ -45,7 +45,7 @@
                     <div class="garage-item-text">Add A Bike</div>
                 </div>
                 <div>
-                    <form method="post" class="bike-add-form-container" action="/addnewparent">
+                    <form method="post" class="bike-add-form-container" action="/addnewparent" enctype="multipart/form-data">
                         @csrf
                         <input name="User_id" type="hidden" value="{{ Auth::user()->id }}">
                         <p>Add a bike picture (optional)</p>

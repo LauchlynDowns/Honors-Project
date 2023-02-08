@@ -354,7 +354,6 @@ p {
 }
 
 .garage-item-top-image {
-    background-image: url("./bikebackground.jpeg");
     background-position: contain;
     background-repeat: no-repeat;
     background-size: 100%;
