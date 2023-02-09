@@ -35,14 +35,15 @@ class componentController extends Controller
       {
        //store current logged in user
       $currentuser = Auth::user()->id;
-      $image = DB::table('parents')->where('id', request('bikeid'))->value('image_path');
+      $image = DB::table('parents')->where('id', request('bikeid'))->value('image_path'); //identify orphan
       // ddd($image);
       //used to store the user id of the post the user wants to delete
       $postauthorid = Parents::where('User_id', $currentuser)->find(request('bikeid'))->User_id; //this will throw an error if the user isnt the owner
       //only delete the userid if the current signed in user owns the content
       if ($currentuser == $postauthorid) {
-        Storage::delete("public/" . $image);
-        Storage::delete($image);
+        Storage::delete("public/" . $image); //delete orphans
+        Storage::delete($image); //delete orphans
+        
         Parents::where('id', request('bikeid'))->delete();
         return redirect('dashboard');
       } else {
