@@ -19,8 +19,7 @@
                                 <div class="component-model">Uniteco oval ring</div>
                             </div>
                         </div>
-                        <div class="component">w</div>
-                        <div class="component">w</div>
+                        
 
 
                     </div>
@@ -28,7 +27,7 @@
                     <div class="parent-bottom-buttons">
                         <form action="/view" method="POST">
                             @csrf
-                            <button value="{{ $parent->id }}" name="bikeid" class="bluebutton signinbutton-small bikebutton">
+                            <button value="{{ $parent->id }}" name="bikeid" class="signinbutton-small">
                                 View Full Bike
                             </button>
                         </form>
@@ -36,7 +35,7 @@
                         <form action="/deletebike" method="POST">
                             @csrf
                             <button style="background-color:red;" name="bikeid" value="{{ $parent->id }}"
-                                class="bluebutton signinbutton-small bikebutton"
+                                class="signinbutton-small"
                                 onclick="return confirm('Are you sure to delete {{ $parent->Parent_model }} ? ')">
                                 Delete bike
                             </button>
@@ -75,10 +74,12 @@
 
             </div>
             <div class="bottom-area-container">
+            <a href="/dashboard">
                 <div class="nav-item">
                     <div class="nav-icon">🚲</div>
                     <p class="nav-text">All Bikes</p>
                 </div>
+                </a>
                 <div class="nav-item">
                     <div class="nav-icon">➕</div>
                     <p class="nav-text">Add Mileage</p>
