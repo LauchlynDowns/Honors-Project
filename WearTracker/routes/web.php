@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
     
 })->middleware(['auth'])->name('dashboard');
 
+
 Route::get('/welcome', function () {
     return view('Welcome');
 })->middleware(['auth'])->name('welcome');
@@ -34,6 +35,11 @@ Route::post('addnewparent', [componentController::class, 'addnewparent'])
 
 Route::post('deletebike', [componentController::class, 'deletebike'])
 ->middleware(['auth'])->name('deletebike');
+
+Route::post('view', [componentController::class, 'viewbike'])
+->middleware(['auth'])->name('deletebike');
+
+
 
 
 //routes for file handling

@@ -51,6 +51,12 @@ class componentController extends Controller
       }
     }
 
+    public function viewbike(){
+      $bikeid = request('bikeid');
+      $parents = Parents::all()->where('User_id', Auth::user()->id);
+      $parents = Parents::all()->where('id', $bikeid);
+      return view("view")->with(array('parents'=>$parents));
+    }
 
 
 }
