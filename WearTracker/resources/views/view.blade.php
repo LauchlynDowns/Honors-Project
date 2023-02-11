@@ -31,7 +31,7 @@
 
                     </div>
                     <div style="margin-bottom:10vh" class="parent-bottom-buttons">
-                     <form action="/addpart" method="POST">
+                     <form action="/addpart" method="GET">
                             @csrf
                         <button name="bikeid" value="{{ $parent->id }}" class="signinbutton-small">
                             Add part

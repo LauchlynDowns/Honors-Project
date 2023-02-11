@@ -37,9 +37,15 @@ Route::post('deletebike', [componentController::class, 'deletebike'])
 ->middleware(['auth'])->name('deletebike');
 
 Route::post('view', [componentController::class, 'viewbike'])
-->middleware(['auth'])->name('deletebike');
+->middleware(['auth'])->name('viewbike');
 
 
+Route::get('addpart', [componentController::class, 'addpartsview'])
+->middleware(['auth'])->name('addpartview');
+
+
+Route::post('addpart', [componentController::class, 'addpart'])
+->middleware(['auth'])->name('addpart');
 
 
 //routes for file handling
