@@ -51,8 +51,8 @@
                     <div class="garage-item-text">Add A Bike</div>
                 </div>
                 <div>
-                    <form method="post" class="bike-add-form-container" action="/addnewparent">
-                       
+                    <form method="post" class="bike-add-form-container" action="/addnewparent"
+                        enctype="multipart/form-data">
                         @csrf
                         <input name="User_id" type="hidden" value="{{ Auth::user()->id }}">
                         <p>Add a bike picture (optional)</p>
