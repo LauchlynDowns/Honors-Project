@@ -24,8 +24,10 @@
 
                     </div>
 
+
+
                     <div class="parent-bottom-buttons">
-                        <form action="/view" method="POST">
+                        <form action="/view" method="post">
                             @csrf
                             <button value="{{ $parent->id }}" name="bikeid" class="signinbutton-small">
                                 View Full Bike
@@ -49,8 +51,8 @@
                     <div class="garage-item-text">Add A Bike</div>
                 </div>
                 <div>
-                    <form method="post" class="bike-add-form-container" action="/addnewparent"
-                        enctype="multipart/form-data">
+                    <form method="post" class="bike-add-form-container" action="/addnewparent">
+                       
                         @csrf
                         <input name="User_id" type="hidden" value="{{ Auth::user()->id }}">
                         <p>Add a bike picture (optional)</p>
@@ -71,6 +73,7 @@
                         <button type="submit" class="signinbutton">Add Bike</button>
                     </form>
                 </div>
+ 
 
             </div>
             <div class="bottom-area-container">

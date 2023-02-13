@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Parents;
-use App\Models\component;
+use App\Models\components;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -59,25 +59,28 @@ class componentController extends Controller
       return view("view")->with(array('parents'=>$parents));
     }
 
-    public function addpartsview(){
-      $bikeid = request('bikeid');
-      $parents = Parents::all()->where('User_id', Auth::user()->id);
-      $parents = Parents::all()->where('id', $bikeid);
-      return view("addpart")->with(array('parents'=>$parents));
+    
+
+
+    public function addpart()
+    {
+      // var_dump(request()->all());
+       $parents = Parents::all()->where('User_id', Auth::user()->id);
+          $attributes = request()->validate([
+             'Parent_Id' => 'required|max:255',
+              'Component_brand' => 'required|max:255',
+             'Component_model' => 'required|max:255',
+              'Component_info' => 'required|max:100',
+             'Component_year' =>'required|max:500',
+             'Component_creationdate' => 'required|max:255',
+             'Component_miles' => 'required|max:100',
+            'Component_hours' =>'required|max:100'
+      ]); 
+    
+     components::create($attributes);
+    //   return redirect('/addpart');
     }
 
-    public function addpart(){
-      $parents = Parents::all()->where('User_id', Auth::user()->id);
-$attributes = request()->validate([
-  'Parent_Id' => 'required|max:255',
-  'Component_brand' => 'required|max:255',
-  'Component_model' => 'required|max:255',
-  'Component_info' => 'required|max:100',
-  'Component_year' =>'required|max:500', 
-]);
-dd($attributes);
- component::create($attributes);
- return redirect('/view')->with(array('parents'=>$parents));;
-    }
+
 }
 ;

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\componentController;
 use App\Models\Parents;
+use App\Models\components;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,19 +40,22 @@ Route::post('deletebike', [componentController::class, 'deletebike'])
 Route::post('view', [componentController::class, 'viewbike'])
 ->middleware(['auth'])->name('viewbike');
 
+Route::get('/createcomponent', function () {
+    return view('createcomponent',[ 'parents' => Parents::all()->where('User_id', Auth::user()->id)]);
+})->middleware(['auth'])->name('createcomponentpage');
 
-Route::get('addpart', [componentController::class, 'addpartsview'])
-->middleware(['auth'])->name('addpartview');
+Route::get('/newcomponent', function () {
+    return view('createcomponent',[ 'parents' => Parents::all()->where('User_id', Auth::user()->id)]);
+})->middleware(['auth'])->name('newcomponent');
 
-
-Route::post('addpart', [componentController::class, 'addpart'])
+Route::post('newcomponent', [componentController::class, 'addpart'])
 ->middleware(['auth'])->name('addpart');
-
 
 //routes for file handling
 Route::resource('photos', FileDownloadController::class);
 
-
+// Route::post('/addpart', [componentController::class, 'addpart'])
+// ->middleware(['auth'])->name('addpart');
 
 require __DIR__.'/auth.php';
 

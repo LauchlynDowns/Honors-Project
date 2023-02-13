@@ -19,24 +19,12 @@
                                 <div class="component-model">Uniteco oval ring</div>
                             </div>
                         </div>
-                        <div class="view-component">w</div>
-                        <div class="view-component">w</div>
-                        <div class="view-component">w</div>
-                        <div class="view-component">w</div>
-                        
-                        <div class="view-component">w</div>
-                        <div class="view-component">w</div>
-                        <div class="view-component">w</div>
-
+                        <div class="view-component">
+                  
+</div>
 
                     </div>
                     <div style="margin-bottom:10vh" class="parent-bottom-buttons">
-                     <form action="/addpart" method="GET">
-                            @csrf
-                        <button name="bikeid" value="{{ $parent->id }}" class="signinbutton-small">
-                            Add part
-                        </button>
-                        </form>
                         <form action="/deletebike" method="POST">
                             @csrf
 
@@ -47,6 +35,22 @@
                             </button>
                         </form>
                     </div>
+
+                        <form method="POST" class="bike-add-form-container" action="/view">
+                        @csrf
+                         <input name="Parent_Id" type="hidden" value="{{ $parent->id }}">
+                        <input name="User_id" type="hidden" value="{{ Auth::user()->id }}">
+                        <p>Component Brand</p>
+                        <input class="" placeholder="E.g Fox" type="text" name="Parent_brand" required>
+                        <p>Component Model</p>
+                        <input class="" placeholder="E.g DHX2" type="text" name="Parent_model" required>
+                        <p>model year</p>
+                        <input class="" placeholder="2020" type="text" name="Parent_MY" required>
+                        <p>Information</p>
+                        <input class="" placeholder="e.g Rear shock" type="text" name="Parent_info" required>
+                        <br>
+                        <button type="submit" class="signinbutton">Add Bike</button>
+                    </form>
                 </div>
             @endforeach
        

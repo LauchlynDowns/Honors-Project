@@ -22,8 +22,8 @@ class CreateComponentsTable extends Migration
             $table->text('Component_info');
             $table->string('Component_year');
             $table->string('Component_creationdate');
-            $table->string('Component_miles');
-            $table->string('Component_hours');
+            $table->string('Component_miles')->nullable();
+            $table->string('Component_hours')->nullable();
         });
     }
 
