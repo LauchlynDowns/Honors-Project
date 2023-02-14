@@ -3,6 +3,9 @@
     <body class="mainpagebody" style="background-color:1F4BE9;!important">
         <div class="garage space-evenly">
             <div class="view-parent">
+            <a href="/dashboard">
+            <div class="signinbutton quater" style="margin:20px;" type="submit" >Back</div>
+            <a>
                 <form method="post" class="bike-add-form-container" action="/newcomponent">
                     @csrf
                    
@@ -24,7 +27,7 @@
                     <input type="hidden" name="Component_miles" value="0" required>
                     <input type="hidden" name="Component_hours" value="0" required>
                    <br>
-                    <button type="submit" class="signinbutton">Add Bike</button>
+                    <button type="submit" class="signinbutton">Add Component</button>
                 </form>
 
                 <div style="margin-bottom:10vh" class="parent-bottom-buttons">

@@ -53,10 +53,13 @@ class componentController extends Controller
     }
 
     public function viewbike(){
+      
       $bikeid = request('bikeid');
+      $components = components::all()->where('Parent_Id', $bikeid);
       $parents = Parents::all()->where('User_id', Auth::user()->id);
       $parents = Parents::all()->where('id', $bikeid);
-      return view("view")->with(array('parents'=>$parents));
+      // return view("view")->with(array('parents'=>$parents), array('components'=>$components));
+      return view('view')->with(['parents' => $parents, 'components' => $components]);
     }
 
     
@@ -64,6 +67,7 @@ class componentController extends Controller
 
     public function addpart()
     {
+     
       // var_dump(request()->all());
        $parents = Parents::all()->where('User_id', Auth::user()->id);
           $attributes = request()->validate([
@@ -76,9 +80,9 @@ class componentController extends Controller
              'Component_miles' => 'required|max:100',
             'Component_hours' =>'required|max:100'
       ]); 
-    
-     components::create($attributes);
-    //   return redirect('/addpart');
+      components::create($attributes);
+     return redirect('/dashboard');
+     
     }
 
 
