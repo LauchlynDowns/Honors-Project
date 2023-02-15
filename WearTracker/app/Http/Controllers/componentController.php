@@ -44,7 +44,6 @@ class componentController extends Controller
       if ($currentuser == $postauthorid) {
         Storage::delete("public/" . $image); //delete orphans
         Storage::delete($image); //delete orphans
-        
         Parents::where('id', request('bikeid'))->delete();
         return redirect('dashboard');
       } else {
