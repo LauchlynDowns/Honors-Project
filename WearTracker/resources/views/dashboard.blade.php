@@ -13,15 +13,6 @@
                         <div class="mileageinfo-miles">tracked since {{ $parent->created_at }}</div>
                     </div>
                     <div class="component-holder">
-                        <div class="component">
-                            <div class="component-title-holder">
-                                <div class="component-type">FRONT CHAINRING</div>
-                                <div class="component-model">Uniteco oval ring</div>
-                            </div>
-                        </div>
-                        
-
-
                     </div>
 
 
@@ -73,24 +64,28 @@
                         <button type="submit" class="signinbutton">Add Bike</button>
                     </form>
                 </div>
- 
+
 
             </div>
             <div class="bottom-area-container">
-            <a href="/dashboard">
-                <div class="nav-item">
-                    <div class="nav-icon">🚲</div>
-                    <p class="nav-text">All Bikes</p>
-                </div>
+                <a href="/dashboard">
+                    <div class="nav-item">
+                        <div class="nav-icon">🚲</div>
+                        <p class="nav-text">All Bikes</p>
+                    </div>
                 </a>
-                <div class="nav-item">
+                 <a href="/addmileage">
+                    <div class="nav-item">
                     <div class="nav-icon">➕</div>
                     <p class="nav-text">Add Mileage</p>
                 </div>
+                </a>
+                 <a href="/dashboard">
                 <div class="nav-item">
                     <div class="nav-icon">⚙️</div>
                     <p class="nav-text">Settings</p>
                 </div>
+                </a>
             </div>
     </body>
 </x-app-layout>

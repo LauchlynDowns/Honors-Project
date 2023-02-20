@@ -365,7 +365,7 @@ p {
 .parent {
     background-color: #F4F3FF;
     height: 70vh;
-    min-width: 500px;
+    min-width: 600px;
     border-radius: 17px;
     margin-left: 5%;
     margin-right: 5%;
@@ -389,7 +389,7 @@ box-shadow: 5px 6px 5px -2px black;
     color: white;
     font-family: 'quicksand', sans-serif;
     font-weight: 700;
-    font-size: 300%;
+    font-size: 30px;
 }
 
 .mileageinfo {
@@ -424,6 +424,7 @@ box-shadow: 5px 6px 5px -2px black;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .parent-bottom-buttons-button {
@@ -517,4 +518,15 @@ box-shadow: 5px 6px 5px -2px black;
     min-width: 15%;
     width: 15%;
     text-align: center;
+}
+.component-mileage-holder{
+    margin-top: 10%;
+    width: 25%;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+margin-left: 10%;
+font-weight: 700;
+font-size: 120%;
+column-gap: 5%;
 }

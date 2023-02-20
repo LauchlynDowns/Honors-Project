@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard',[
-        'parents' => Parents::all()->where('User_id', Auth::user()->id)
+      'parents' => Parents::all()->where('User_id', Auth::user()->id)
     ]);
     
 })->middleware(['auth'])->name('dashboard');
@@ -50,6 +50,16 @@ Route::get('/newcomponent', function () {
 
 Route::post('newcomponent', [componentController::class, 'addpart'])
 ->middleware(['auth'])->name('addpart');
+
+//routes for add mileage
+Route::get('/addmileage', function () {
+    return view('addmileage',[ 'parents' => Parents::all()->where('User_id', Auth::user()->id)]);
+})->middleware(['auth'])->name('addmileage');
+
+Route::post('newlog',[componentController::class, 'newlog'])
+->middleware(['auth'])->name('newlog');
+
+
 
 //routes for file handling
 Route::resource('photos', FileDownloadController::class);

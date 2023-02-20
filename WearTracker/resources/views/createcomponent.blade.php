@@ -17,7 +17,7 @@
                             </select>
                             <p>Component Type</p>
                             <input name="Component_type" style="width:30%;" list="Component_type">
-                            <datalist id="Component_type">
+                            <datalist name="Component_type" id="Component_type">
                                 <option value="">- Please select a Component Type -</option>
                                 <option value="Rear Derailleur">Rear Derailleur</option>
                                 <option value="Front Derailleur">Front Derailleur</option>

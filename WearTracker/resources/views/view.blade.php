@@ -13,22 +13,31 @@
                         <div class="mileageinfo-miles">tracked since {{ $parent->created_at }}</div>
                     </div>
                     <div class="view-component-holder">
-                    @foreach ($components as $component) 
-                        <div class="view-component">
-                        
-                            <div class="component-title-holder">
-                                <div class="component-type">FRONT CHAINRING</div>
-                                <div class="component-model"> {{ $component->Component_brand }} {{ $component->Component_model }} </div>
+                        @foreach ($components as $component)
+                            <div class="view-component">
+
+                                <div class="component-title-holder">
+                                    <div class="component-type">
+                                        &nbsp;&nbsp;&nbsp;{{ $component->Component_type }}&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="component-model"> {{ $component->Component_brand }}
+                                        {{ $component->Component_model }} </div>
+
+                                </div>
+                                <div class="component-mileage-holder">
+                                    <div class="component-mileage-holder-item"> {{ $component->Component_miles }} Miles
+                                    </div>
+                                    <div class="component-mileage-holder-item">{{ $component->Component_hours }} Hours
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
-                       
+
 
                     </div>
                     <div style="margin-bottom:10vh" class="parent-bottom-buttons">
-                     <form action="/createcomponent" method="get">
-                    <button class="signinbutton-small">Add Component</button>
-                    </form>
+                        <form action="/createcomponent" method="get">
+                            <button class="signinbutton-small">Add Component</button>
+                        </form>
                         <form action="/deletebike" method="POST">
                             @csrf
 
@@ -40,25 +49,29 @@
                         </form>
                     </div>
 
-                        
+
                 </div>
             @endforeach
-       
-        <div class="bottom-area-container">
-            <a href="/dashboard">
-                <div class="nav-item">
-                    <div class="nav-icon">🚲</div>
-                    <p class="nav-text">All Bikes</p>
+
+            <div class="bottom-area-container">
+                <a href="/dashboard">
+                    <div class="nav-item">
+                        <div class="nav-icon">🚲</div>
+                        <p class="nav-text">All Bikes</p>
+                    </div>
+                </a>
+                 <a href="/addmileage">
+                    <div class="nav-item">
+                    <div class="nav-icon">➕</div>
+                    <p class="nav-text">Add Mileage</p>
                 </div>
-            </a>
-            <div class="nav-item">
-                <div class="nav-icon">➕</div>
-                <p class="nav-text">Add Mileage</p>
+                </a>
+                 <a href="/dashboard">
+                <div class="nav-item">
+                    <div class="nav-icon">⚙️</div>
+                    <p class="nav-text">Settings</p>
+                </div>
+                </a>
             </div>
-            <div class="nav-item">
-                <div class="nav-icon">⚙️</div>
-                <p class="nav-text">Settings</p>
-            </div>
-        </div>
     </body>
 </x-app-layout>

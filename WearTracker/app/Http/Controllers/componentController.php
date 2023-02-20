@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Parents;
 use App\Models\components;
+use App\Models\Log;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -71,6 +72,7 @@ class componentController extends Controller
        $parents = Parents::all()->where('User_id', Auth::user()->id);
           $attributes = request()->validate([
              'Parent_Id' => 'required|max:255',
+             'Component_type' => 'required|max:255',
               'Component_brand' => 'required|max:255',
              'Component_model' => 'required|max:255',
               'Component_info' => 'required|max:100',
@@ -84,6 +86,8 @@ class componentController extends Controller
      
     }
 
-
+public function newlog(){
+  return request()->all();
+}
 }
 ;

@@ -17,6 +17,7 @@ class CreateComponentsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('Parent_Id');
+            $table->string('Component_type');
             $table->string('Component_brand');
             $table->text('Component_model');
             $table->text('Component_info');
