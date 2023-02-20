@@ -87,7 +87,19 @@ class componentController extends Controller
     }
 
 public function newlog(){
-  return request()->all();
+ // return request()->all();
+  $attributes = request()->validate([
+    'Parent_Id' => 'required|max:255',
+    'Log_type' => 'required|max:255',
+     'Log_info' => 'required|max:500',
+     'Log_mileage' => 'required|max:50',
+     'Log_hours' => 'required|max:50'
+   
+]); 
+Log::create($attributes);
+return redirect('/dashboard');
+
+
 }
 }
 ;
