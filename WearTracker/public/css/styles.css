@@ -176,7 +176,7 @@ p {
 .bottom-area-container {
     background-color: white;
     width: 100vw;
-    height: 10%;
+    /* height: 8%; */
     position: fixed;
     bottom: 0;
     display: flex;

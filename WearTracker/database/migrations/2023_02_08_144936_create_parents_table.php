@@ -23,6 +23,7 @@ class CreateParentsTable extends Migration
             $table->string('Parent_MY');
             $table->string('Parent_info');
             $table->string('Parent_serialnumber');
+            $table->string('Parent_mileage')->nullable();
         });
     }
 
