@@ -96,10 +96,25 @@ public function newlog(){
      'Log_hours' => 'required|max:50'
    
 ]); 
-Log::create($attributes);
-return redirect('/dashboard');
+
+$Parent = Parents::find(request('Parent_Id'));
+$Parent->Parent_mileage = $Parent->Parent_mileage + request('Log_mileage');
+$Parent->save();
+//put mileage from request into variable
+$parentid = request('Log_mileage');
+//get total number of components on bike
+$count = components::where('Parent_Id', request('Parent_Id'))->count();
+//put components into array that have the parent id
+$components = components::where('Parent_Id', request('Parent_Id'))->get();
+//loop for each component
+ for ($c = 0; $c < $count; $c++) {
+   $components[$c]->Component_miles = $components[$c]->Component_miles + $parentid;
+   $components[$c]->save();
+ }
 
 
+ Log::create($attributes);
+ return redirect('/dashboard');
+
 }
-}
-;
+};
