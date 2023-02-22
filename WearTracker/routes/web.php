@@ -45,7 +45,11 @@ Route::get('/createcomponent', function () {
 })->middleware(['auth'])->name('createcomponentpage');
 
 Route::get('/newcomponent', function () {
+    if(Parents::all()->where('User_id', Auth::user()->id)->count() == 0){
+        return view('bikenotfound');
+    } else {
     return view('createcomponent',[ 'parents' => Parents::all()->where('User_id', Auth::user()->id)]);
+    }
 })->middleware(['auth'])->name('newcomponent');
 
 Route::post('newcomponent', [componentController::class, 'addpart'])
@@ -53,7 +57,11 @@ Route::post('newcomponent', [componentController::class, 'addpart'])
 
 //routes for add mileage
 Route::get('/addmileage', function () {
+    if(Parents::all()->where('User_id', Auth::user()->id)->count() == 0){
+        return view('bikenotfound');
+    } else {
     return view('addmileage',[ 'parents' => Parents::all()->where('User_id', Auth::user()->id)]);
+    }
 })->middleware(['auth'])->name('addmileage');
 
 Route::post('newlog',[componentController::class, 'newlog'])

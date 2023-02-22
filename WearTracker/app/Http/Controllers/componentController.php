@@ -68,7 +68,8 @@ class componentController extends Controller
     public function addpart()
     {
      
-      // var_dump(request()->all());
+    
+      var_dump(request()->all());
        $parents = Parents::all()->where('User_id', Auth::user()->id);
           $attributes = request()->validate([
              'Parent_Id' => 'required|max:255',
@@ -101,14 +102,16 @@ $Parent = Parents::find(request('Parent_Id'));
 $Parent->Parent_mileage = $Parent->Parent_mileage + request('Log_mileage');
 $Parent->save();
 //put mileage from request into variable
-$parentid = request('Log_mileage');
+$mileage = request('Log_mileage');
+$hours = request('Log_hours');
 //get total number of components on bike
 $count = components::where('Parent_Id', request('Parent_Id'))->count();
 //put components into array that have the parent id
 $components = components::where('Parent_Id', request('Parent_Id'))->get();
 //loop for each component
  for ($c = 0; $c < $count; $c++) {
-   $components[$c]->Component_miles = $components[$c]->Component_miles + $parentid;
+   $components[$c]->Component_miles = $components[$c]->Component_miles + $mileage;
+   $components[$c]->Component_hours = $components[$c]->Component_hours + $hours;
    $components[$c]->save();
  }
 
