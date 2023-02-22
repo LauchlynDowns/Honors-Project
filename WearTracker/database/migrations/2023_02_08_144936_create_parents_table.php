@@ -17,7 +17,7 @@ class CreateParentsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('User_id');
-            $table->string('image_path');
+            $table->string('image_path')->nullable();
             $table->string('Parent_brand');
             $table->string('Parent_model');
             $table->string('Parent_MY');

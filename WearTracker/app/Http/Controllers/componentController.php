@@ -24,11 +24,17 @@ class componentController extends Controller
           'Parent_info' =>'required|max:500',
           'Parent_serialnumber' => 'required',    
       ]);
-
-    $attributes['image_path'] = request()->file('filename')->store('public/bikeimages');
-    $attributes['image_path'] = request()->file('filename')->store('bikeimages');
-    Parents::create($attributes);
-    return redirect('/dashboard');
+      if(request()->file('filename') == NULL){
+        Parents::create($attributes);
+        return redirect('/dashboard');
+      } else{
+  $attributes['image_path'] = request()->file('filename')->store('public/bikeimages');
+  $attributes['image_path'] = request()->file('filename')->store('bikeimages');
+  Parents::create($attributes);
+  return redirect('/dashboard');
+      }
+   
+   
   }
 
     public function deletebike()
