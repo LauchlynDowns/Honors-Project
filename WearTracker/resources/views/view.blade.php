@@ -4,13 +4,36 @@
         <div class="garage space-evenly">
             @foreach ($parents as $parent)
                 <div class="view-parent">
-                    <div class="view-garage-item-top-image"
-                        style="background-image: url('{{ asset('storage/' . $parent->image_path) }}');">
+                    <div class="garage-left-container">
+                        <div class="view-garage-item-top-image"
+                            style="background-image: url('{{ asset('storage/' . $parent->image_path) }}');">
+                        </div>
                         <div class="garage-item-text">{{ $parent->Parent_brand }} {{ $parent->Parent_model }}</div>
-                    </div>
-                    <div class="mileageinfo">
-                        <div class="mileageinfo-miles">{{ $parent->mileage }} miles</div>
-                        <div class="mileageinfo-miles">tracked since {{ $parent->created_at }}</div>
+                        <div class="mileageinfo">
+                            <div class="mileageinfo-miles">tracked since {{ $parent->created_at }}</div>
+                        </div>
+                         <br>
+                        <div style="display:flex; flex-direction:row; justify-content: center; width:100%;">
+                            <form action="/deletebike" method="POST">
+                                @csrf
+
+                                <button style="background-color:red;" name="bikeid" value="{{ $parent->id }}"
+                                    class="signinbutton-small"
+                                    onclick="return confirm('Are you sure to delete {{ $parent->Parent_model }} ? ')">
+                                    Delete bike
+                                </button>
+                            </form>
+                        </div>
+                        <br>
+                        <div style="display:flex; flex-direction:row; justify-content: center; width:100%;">
+                            <form action="/createcomponent" method="get">
+                                <button class="signinbutton-small">Add Component</button>
+                            </form>
+                        </div>
+                        <div class="mileagecontainer">
+                            {{ $parent->Parent_mileage }} <br>
+                            <p style="font-size:25px;">Miles</p>
+                        </div>
                     </div>
                     <div class="view-component-holder">
                         @foreach ($components as $component)
@@ -32,24 +55,7 @@
                             </div>
                         @endforeach
 
-
                     </div>
-                    <div style="margin-bottom:10vh" class="parent-bottom-buttons">
-                        <form action="/createcomponent" method="get">
-                            <button class="signinbutton-small">Add Component</button>
-                        </form>
-                        <form action="/deletebike" method="POST">
-                            @csrf
-
-                            <button style="background-color:red;" name="bikeid" value="{{ $parent->id }}"
-                                class="signinbutton-small"
-                                onclick="return confirm('Are you sure to delete {{ $parent->Parent_model }} ? ')">
-                                Delete bike
-                            </button>
-                        </form>
-                    </div>
-
-
                 </div>
             @endforeach
 
@@ -60,17 +66,17 @@
                         <p class="nav-text">All Bikes</p>
                     </div>
                 </a>
-                 <a href="/addmileage">
+                <a href="/addmileage">
                     <div class="nav-item">
-                    <div class="nav-icon">➕</div>
-                    <p class="nav-text">Add Mileage</p>
-                </div>
+                        <div class="nav-icon">➕</div>
+                        <p class="nav-text">Add Mileage</p>
+                    </div>
                 </a>
-                 <a href="/dashboard">
-                <div class="nav-item">
-                    <div class="nav-icon">⚙️</div>
-                    <p class="nav-text">Settings</p>
-                </div>
+                <a href="/dashboard">
+                    <div class="nav-item">
+                        <div class="nav-icon">⚙️</div>
+                        <p class="nav-text">Settings</p>
+                    </div>
                 </a>
             </div>
     </body>
