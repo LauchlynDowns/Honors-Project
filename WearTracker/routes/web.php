@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\componentController;
 use App\Models\Parents;
 use App\Models\components;
+use App\Models\Log;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +69,9 @@ Route::post('newlog',[componentController::class, 'newlog'])
 ->middleware(['auth'])->name('newlog');
 
 
+Route::get('/ridelogs', function () {
+    return view('ridelogs',[ 'logs' => Log::all()]);
+})->middleware(['auth'])->name('ridelogs');
 
 //routes for file handling
 Route::resource('photos', FileDownloadController::class);

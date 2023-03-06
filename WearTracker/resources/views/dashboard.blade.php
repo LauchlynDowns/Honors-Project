@@ -5,7 +5,7 @@
             @foreach ($parents as $parent)
                 <div class="parent">
                     <div class="garage-item-top-image"
-                        style="background-image: url('{{ asset('storage/' . $parent->image_path) }}');">
+                        style="background-image: url('{{ asset('storage/' . $parent->image_path) }}'); height:20%;">
                         <div class="garage-item-text">{{ $parent->Parent_brand }} {{ $parent->Parent_model }}</div>
                     </div>
                     <div class="mileageinfo">

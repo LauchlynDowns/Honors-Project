@@ -29,7 +29,15 @@
                             <form action="/createcomponent" method="get">
                                 <button class="signinbutton-small">Add Component</button>
                             </form>
+                            
+                            
                         </div>
+                        <br>
+                         <div style="display:flex; flex-direction:row; justify-content: center; width:100%;">
+                         <form action="/ridelogs" method="get">
+                                <button class="signinbutton-small">View Mileage Log</button>
+                            </form>
+                            </div>
                         <div class="mileagecontainer">
                             {{ $parent->Parent_mileage }} <br>
                             <p style="font-size:25px;">Miles</p>
