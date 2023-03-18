@@ -57,8 +57,7 @@
                                 <div class="component-mileage-holder">
                                     <div class="component-mileage-holder-item"> {{ $component->Component_miles }} Miles
                                     </div>
-                                    <div class="component-mileage-holder-item">{{ $component->Component_hours }} Hours
-                                    </div>
+                                    <div class="component-mileage-holder-item">{{ $component->Component_hours }} Hours</div>
                                 </div>
                             </div>
                         @endforeach
