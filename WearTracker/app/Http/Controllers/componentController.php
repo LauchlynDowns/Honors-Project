@@ -14,7 +14,6 @@ class componentController extends Controller
  
   public function addnewparent()
   {
-
       $attributes = request()->validate([
           'User_id' => 'required|max:255',
           'image_path'=> 'image',
@@ -32,14 +31,9 @@ class componentController extends Controller
   $attributes['image_path'] = request()->file('filename')->store('bikeimages');
   Parents::create($attributes);
   return redirect('/dashboard');
-      }
-   
-   
-  }
+      }}
 
     public function deletebike()
-
-
       {
        //store current logged in user
       $currentuser = Auth::user()->id;
@@ -59,7 +53,6 @@ class componentController extends Controller
     }
 
     public function viewbike(){
-      
       $bikeid = request('bikeid');
       $components = components::all()->where('Parent_Id', $bikeid);
       $parents = Parents::all()->where('User_id', Auth::user()->id);
@@ -73,8 +66,6 @@ class componentController extends Controller
 
     public function addpart()
     {
-     
-    
       var_dump(request()->all());
        $parents = Parents::all()->where('User_id', Auth::user()->id);
           $attributes = request()->validate([
@@ -89,8 +80,7 @@ class componentController extends Controller
             'Component_hours' =>'required|max:100'
       ]); 
       components::create($attributes);
-     return redirect('/dashboard');
-     
+     return redirect('/dashboard');  
     }
 
 public function newlog(){
@@ -101,9 +91,7 @@ public function newlog(){
      'Log_info' => 'required|max:500',
      'Log_mileage' => 'required|max:50',
      'Log_hours' => 'required|max:50'
-   
 ]); 
-
 $Parent = Parents::find(request('Parent_Id'));
 $Parent->Parent_mileage = $Parent->Parent_mileage + request('Log_mileage');
 $Parent->save();
@@ -120,10 +108,7 @@ $components = components::where('Parent_Id', request('Parent_Id'))->get();
    $components[$c]->Component_hours = $components[$c]->Component_hours + $hours;
    $components[$c]->save();
  }
-
-
  Log::create($attributes);
  return redirect('/dashboard');
-
 }
 };

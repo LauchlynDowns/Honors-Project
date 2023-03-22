@@ -26,7 +26,7 @@
                         </div>
                         <br>
                         <div style="display:flex; flex-direction:row; justify-content: center; width:100%;">
-                            <form action="/createcomponent" method="get">
+                            <form action="/newcomponent" method="get">
                                 <button class="signinbutton-small">Add Component</button>
                             </form>
                             

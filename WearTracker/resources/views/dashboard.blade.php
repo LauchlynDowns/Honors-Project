@@ -14,9 +14,6 @@
                     </div>
                     <div class="component-holder">
                     </div>
-
-
-
                     <div class="parent-bottom-buttons">
                         <form action="/view" method="post">
                             @csrf
@@ -74,17 +71,17 @@
                         <p class="nav-text">All Bikes</p>
                     </div>
                 </a>
-                 <a href="/addmileage">
+                <a href="/addmileage">
                     <div class="nav-item">
-                    <div class="nav-icon">➕</div>
-                    <p class="nav-text">Add Mileage</p>
-                </div>
+                        <div class="nav-icon">➕</div>
+                        <p class="nav-text">Add Mileage</p>
+                    </div>
                 </a>
-                 <a href="/dashboard">
-                <div class="nav-item">
-                    <div class="nav-icon">⚙️</div>
-                    <p class="nav-text">Settings</p>
-                </div>
+                <a href="/dashboard">
+                    <div class="nav-item">
+                        <div class="nav-icon">⚙️</div>
+                        <p class="nav-text">Settings</p>
+                    </div>
                 </a>
             </div>
     </body>
